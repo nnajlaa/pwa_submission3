@@ -5,6 +5,17 @@ const ep_kompetisi = `${base_url}/competitions/${league_id}/standings`; //standi
 const ep_detail_tim = `${base_url}/teams`;
 const ep_jadwal = `${base_url}/competitions/${league_id}/matches`; //match
 
+let load = `<div class="preloader-wrapper small active" style="position: absolute; top :0; left: 0; right: 0; bottom: 0; margin: auto; z-index:10;">
+        <div class="spinner-layer spinner-black-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      	</div>`;
 
 const fetchAPI = url => {
   return fetch(url, {
@@ -35,7 +46,7 @@ function getAllStandings(){
 			}
 		})
 	}
-
+	document.getElementById("body-content").innerHTML = `${load}`;
 	fetchAPI(ep_kompetisi).then(data=> {
 		showStanding(data);
 	}).catch(error => {
@@ -102,6 +113,7 @@ function getAllMatches(){
 			}
 		})
 	}
+	document.getElementById("body-content").innerHTML = `${load}`;
 	fetchAPI(ep_jadwal).then(data => {
 		showMatches(data);
 	}).catch(error => {
@@ -183,6 +195,7 @@ function getTimById(){
 			});
 		}
 
+      	document.getElementById("body-content-tim").innerHTML = `${load}`;
 		fetchAPI(`${ep_detail_tim}/${idParam}`).then(function(data){
 				console.log(data);
 					let timHTML = `
@@ -231,6 +244,7 @@ function getTimById(){
 }
 
 function getSavedTim(){
+	document.getElementById("body-content").innerHTML = `${load}`;
 	getAll().then(function(teams){
 		console.log(teams);
 		let timFav = "";

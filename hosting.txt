@@ -1,2 +1,2 @@
-[Firebase] https://github.com/nnajlaa/info_sepakbola
+[Firebase] https://info-sepakbola.firebaseapp.com
 [github] https://github.com/nnajlaa/pwa_submission3

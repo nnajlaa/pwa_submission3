@@ -14,19 +14,21 @@ workbox.precaching.precacheAndRoute([
 
 	{url: "/css/materialize.min.css", revision: 1},
 
-	{url: "/js/api.js", revision: 1},
-	{url: "/js/db.js", revision: 1},
+	{url: "/js/api.js", revision: 10},
+	{url: "/js/db.js", revision: 7},
 	{url: "/js/idb.js", revision: 1},
 	{url: "/js/materialize.min.js", revision: 1},
-	{url: "/js/nav.js", revision: 1},
+	{url: "/js/nav.js", revision: 8},
 
-	{url: "/index.html", revision: 1},
-	{url: "/manifest.json", revision: 1},
-	{url: "/navigasi.html", revision: 1},
+	{url: "/index.html", revision: 5},
+	{url: "/manifest.json", revision: 2},
+	{url: "/navigasi.html", revision: 3},
 	{url: "/push.js", revision: 1},
-	{url: "req.js", revision: 1},
-	{url: "tim.html", revision: 1},
-]);
+	{url: "/req.js", revision: 3},
+	{url: "/tim.html", revision: 19},
+], {
+	ignoreUrlParametersMatching: [/.*/]
+});
 
 workbox.routing.registerRoute(
 	new RegExp("/pages/"),

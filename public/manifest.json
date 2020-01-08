@@ -2,8 +2,8 @@
   "name": "Informasi Sepakbola",
   "short_name": "Info Sepakbola",
   "description": "Web sederhana berisi informasi lingkup sepakbola",
-  "theme_color": "#b0bec5",
-  "background_color": "#b0bec5",
+  "theme_color": "#424242",
+  "background_color": "#424242",
   "display": "standalone",
   "start_url": "/index.html",
   "icons": [

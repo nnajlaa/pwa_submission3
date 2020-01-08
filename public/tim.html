@@ -11,7 +11,7 @@
             
 </head>
 <body>
-	<nav class="blue-grey lighten-3">
+	<nav class="grey darken-3">
 	    <div class="nav-wrapper">
 	      <a href="#" class="brand-logo right" style="font-size: 20px;">INFO SEPAKBOLA &#9917;</a>
 	      <div id="klasemen">
@@ -83,17 +83,21 @@
         var abFav = document.getElementById("favorit");
 
         if(fromSaved){
-        	btnSave.style.display = "none";
         	abKla.style.display = "none";
+        	btnSave.style.display = "none";
        	}else{
-       		btnDelete.style.display = "none";
        		abFav.style.display = "none";
+       		btnDelete.style.display = "none";
        	}       	    	
        	var item = getTimById();
+
+       	if(urlParams)
 
         btnSave.onclick = function(){
         	console.log("clicked!!");
         	item.then(function(team){
+        		btnSave.style.display = "none";
+        		btnDelete.style.display = "block";
         		simpanTim(team);
         	});
         }
@@ -101,9 +105,11 @@
         btnDelete.onclick = function(){
         	console.log("Deleted!!");
         	item.then(function(id){
+        		btnDelete.style.display = "none";
+        		btnSave.style.display = "block";
         		hapusTim(id);
         	});
-        }       
+        }     
     });
 
     

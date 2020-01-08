@@ -20,9 +20,7 @@ function simpanTim(team){
 				html: team.shortName + " disimpan di favorit!"
 			})
 		}).catch(error => {
-			M.toast({
-				html: "[ GAGAL MENYIMPAN ] </br> " + team.shortName + " mungkin sudah di favorit :)"
-			})
+			console.log("kesalahan: ", error);
 		});
 }
 
