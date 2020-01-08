@@ -27,7 +27,7 @@ workbox.precaching.precacheAndRoute([
 	{url: "/req.js", revision: 3},
 	{url: "/tim.html", revision: 19},
 ], {
-	ignoreUrlParametersMatching: [/.*/]
+	ignoreURLParametersMatching: [/.*/]
 });
 
 workbox.routing.registerRoute(
